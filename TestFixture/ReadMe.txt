@@ -1,40 +1,17 @@
 ========================================================================
-    CONSOLE APPLICATION : TestFixture Project Overview
+    SHA-3 Test fixture
 ========================================================================
 
-AppWizard has created this TestFixture application for you.
+This project is for testing the SHA-3 implementation according to the 
+official test vectors. The test vectors can be retrieved from the NIST 
+website at https://csrc.nist.gov/Projects/cryptographic-algorithm-validation-program/Secure-Hashing#sha3vsha3vss
 
-This file contains a summary of what you will find in each of the files that
-make up your TestFixture application.
+At the moment, this code will read one of the test .rsp files and 
+test the keccak implementation with it - it will create an input file
+called "tst2.txt" from the test specification, run it with output 
+redirected to "op", which is then read to determine if the output
+matches that specified as correct in the .rsp file.
 
-
-TestFixture.vcxproj
-    This is the main project file for VC++ projects generated using an Application Wizard.
-    It contains information about the version of Visual C++ that generated the file, and
-    information about the platforms, configurations, and project features selected with the
-    Application Wizard.
-
-TestFixture.vcxproj.filters
-    This is the filters file for VC++ projects generated using an Application Wizard. 
-    It contains information about the association between the files in your project 
-    and the filters. This association is used in the IDE to show grouping of files with
-    similar extensions under a specific node (for e.g. ".cpp" files are associated with the
-    "Source Files" filter).
-
-TestFixture.cpp
-    This is the main application source file.
-
-/////////////////////////////////////////////////////////////////////////////
-Other standard files:
-
-StdAfx.h, StdAfx.cpp
-    These files are used to build a precompiled header (PCH) file
-    named TestFixture.pch and a precompiled types file named StdAfx.obj.
-
-/////////////////////////////////////////////////////////////////////////////
-Other notes:
-
-AppWizard uses "TODO:" comments to indicate parts of the source code you
-should add to or customize.
-
-/////////////////////////////////////////////////////////////////////////////
+At present, we can do the SHA_3xxxLongMsg.rsp and SHA_3xxxShortMsg.rsp
+files from the byte oriented implementation test suite. I haven't 
+implemented the monte carlo tests yet.
