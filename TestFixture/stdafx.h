@@ -5,13 +5,16 @@
 
 #pragma once
 
+#ifdef WINDOWS
 #include "targetver.h"
 
 #include <tchar.h>
+#endif
 
 #include <vector>
 #include <cstdio>
 #include <string>
+#include <cstring>
 #include <utility>
 #include <string>
 #include <iostream>

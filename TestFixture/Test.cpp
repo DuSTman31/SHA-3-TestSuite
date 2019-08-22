@@ -5,7 +5,7 @@
 #include "FileUtil.h"
 
 template<typename T1>
-static inline unsigned char hexDecode(T1 &begin, T1 &end)
+static inline unsigned char hexDecode(T1 begin, T1 end)
 {
 	unsigned char b = 0;
 	unsigned char c = 0;

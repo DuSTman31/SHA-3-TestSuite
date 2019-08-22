@@ -88,6 +88,32 @@ bool matchString(T1 &ctx, std::string &b)
 }
 
 template<typename T1>
+bool matchString(T1 &ctx, const char *b)
+{
+	T1 ctx2 = ctx;
+	if (ctx2.checkLengthSufficient(strlen(b)))
+	{
+		const char *i = b;
+
+		while (i != 0)
+		{
+			if (ctx2.getChar() != *i)
+			{
+				return false;
+			}
+			i++;
+			ctx2.advance(1);
+		}
+		ctx = ctx2;
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+template<typename T1>
 std::pair<bool, std::string> hexString(T1 &ctx)
 {
 	std::pair<bool, std::string> res;

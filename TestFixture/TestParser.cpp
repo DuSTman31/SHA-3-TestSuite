@@ -6,7 +6,7 @@ using std::cout;
 bool TestParser::parseMDLine(StringContext &a)
 {
 	StringContext b = a;
-	if (matchString(b, std::string("MD = ")))
+	if (matchString(b, "MD = "))
 	{
 		std::pair<bool, std::string> res = hexString(b);
 
@@ -25,7 +25,7 @@ bool TestParser::parseMDLine(StringContext &a)
 bool TestParser::parseMsgLine(StringContext &a)
 {
 	StringContext b = a;
-	if (matchString(b, std::string("Msg = ")))
+	if (matchString(b, "Msg = "))
 	{
 		std::pair<bool, std::string> res = hexString(b);
 
@@ -44,7 +44,7 @@ bool TestParser::parseMsgLine(StringContext &a)
 bool TestParser::parseLengthLine(StringContext &a)
 {
 	StringContext b = a;
-	if (matchString(b, std::string("Len = ")))
+	if (matchString(b, "Len = "))
 	{
 		std::pair<bool, unsigned int> res = parseUInt(b);
 
@@ -107,7 +107,7 @@ bool TestParser::parseLine(std::string &a)
 
 bool TestParser::parseL(StringContext &a)
 {
-	if (matchString(a, std::string("[L = ")))
+	if (matchString(a, "[L = "))
 	{
 		std::pair<bool, unsigned int> res = parseUInt(a);
 		if (res.first)
